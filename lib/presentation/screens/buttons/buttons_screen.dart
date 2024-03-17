@@ -61,6 +61,7 @@ class _ButtonsView extends StatelessWidget {
                 icon: const Icon(Icons.account_box_outlined),
                 label: const Text('Text Icon')),
             //Todo Custome buttos
+            const CustomeButton(),
 
             IconButton(
                 onPressed: () {},
@@ -74,6 +75,28 @@ class _ButtonsView extends StatelessWidget {
               ),
             )
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class CustomeButton extends StatelessWidget {
+  const CustomeButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Material(
+        color: colors.primary,
+        child: InkWell(
+          onTap: () {},
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Text("hola mundo", style: TextStyle(color: Colors.white)),
+          ),
         ),
       ),
     );
